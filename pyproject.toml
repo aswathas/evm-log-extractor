@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "evm-log-extractor"
+version = "0.1.0"
+description = "Forensics-grade EVM log extractor, normaliser, and decoder for Anvil/Foundry and any EVM JSON-RPC endpoint."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "EVM Log Extractor Contributors" }]
+dependencies = [
+    "web3>=6.11,<7",
+    "eth-abi>=4.2,<5",
+    "eth-utils>=2.3,<3",
+    "click>=8.1,<9",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4,<8",
+    "pytest-mock>=3.12,<4",
+    "requests-mock>=1.11,<2",
+]
+
+[project.scripts]
+evm-extract = "evm_log_extractor.cli.extract:main"
+evm-normalise = "evm_log_extractor.cli.normalise:main"
+evm-decode = "evm_log_extractor.cli.decode:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

@@ -1,0 +1,7 @@
+web3>=6.11,<7
+eth-abi>=4.2,<5
+eth-utils>=2.3,<3
+click>=8.1,<9
+pytest>=7.4,<8
+pytest-mock>=3.12,<4
+requests-mock>=1.11,<2
