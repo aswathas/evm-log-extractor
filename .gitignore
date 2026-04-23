@@ -15,3 +15,11 @@ output/
 *.ndjson.gz
 !tests/fixtures/*.json
 .DS_Store
+
+# Local knowledge-graph artifacts / editor state
+graphify-out/
+.graphify_detect.json
+.obsidian/
+.remember/
+.claude/
+.codex
